@@ -10,5 +10,7 @@
     </head>
     <body>
         <h1>スポコチ</h1>
+        <h2 class="title">{{ $post->name }}</h2>
+        <p class="body">{{ $post->body }}</p>
     </body>
 </html>
