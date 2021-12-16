@@ -10,6 +10,7 @@
     </head>
     <body>
         <h1>スポコチ</h1>
+        [<a href="/posts/create">新規募集</a>]
         @foreach ($posts as $post)
         <h2 class="title">
             <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
