@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         return view('posts/create');
     }
-    public function store(Request $request, Post $post)
+    public function store(PostRequest $request, Post $post)
     {
         $input = $request['post'];
         $post->fill($input)->save();
