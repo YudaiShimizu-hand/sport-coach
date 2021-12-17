@@ -10,7 +10,16 @@
     </head>
     <body>
         <h1>スポコチ</h1>
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit">delete</button> 
+        </form>
         <h2 class="title">{{ $post->name }}</h2>
         <p class="body">{{ $post->body }}</p>
+        <div class="footer">
+            <a href="/posts">戻る</a>
+        </div>
     </body>
 </html>
