@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,6 +13,7 @@
     <body>
         <h1>スポコチ</h1>
         [<a href="/posts/create">新規募集</a>]
+        {{Auth::user()->name}}
         @foreach ($posts as $post)
         <h2 class="title">
             <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
@@ -23,3 +26,4 @@
         @endforeach 
     </body>
 </html>
+@endsection

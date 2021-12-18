@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -16,6 +18,7 @@
             @method('DELETE')
             <button type="submit">delete</button>
         </form>
+        <small>{{ $post->user->name }}</small>
         <h2 class="title">{{ $post->name }}</h2>
         <p class="body">{{ $post->body }}</p>
         <div class="footer">
@@ -23,3 +26,4 @@
         </div>
     </body>
 </html>
+@endsection
