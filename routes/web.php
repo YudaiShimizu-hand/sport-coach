@@ -11,7 +11,7 @@
 |
 */
 Route::group(['middleware' => 'auth'], function() {
-    
+    Route::get('/users', 'UserController@index');
 
     Route::get('/posts', 'PostController@index');
     Route::get('/posts/create', 'PostController@create');
@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/posts/{post}', 'PostController@delete');
 
     Route::post('/posts/', 'PostController@store');
+    
 });
 
 Auth::routes();
