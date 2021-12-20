@@ -11,24 +11,26 @@
 
     </head>
     <body>
-        <h1>スポコチ</h1>
-        <h2>新規募集</h2>
-        <form action="/posts" method="POST">
-            @csrf
-            <div class="name">
-                <h2>タイトル</h2>
-                <input type="text" name="post[name]" placeholder="タイトル"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.name') }}</p>
+        <div class="container">
+            <h1>スポコチ</h1>
+            <h2>新規募集</h2>
+            <form action="/posts" method="POST">
+                @csrf
+                <div class="name">
+                    <h2>タイトル</h2>
+                    <input type="text" name="post[name]" placeholder="タイトル"/>
+                    <p class="title__error" style="color:red">{{ $errors->first('post.name') }}</p>
+                </div>
+                <div class="body">
+                    <h2>募集詳細</h2>
+                    <textarea name="post[body]" placeholder="詳細"/></textarea>
+                    <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
+                </div>
+                <input type="submit" value="保存"/>
+            </form>
+            <div class="footer">
+                <a href="/posts">戻る</a>
             </div>
-            <div class="body">
-                <h2>募集詳細</h2>
-                <textarea name="post[body]" placeholder="詳細"/></textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
-            </div>
-            <input type="submit" value="保存"/>
-        </form>
-        <div class="footer">
-            <a href="/posts">戻る</a>
         </div>
     </body>
 </html>

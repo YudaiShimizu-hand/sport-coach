@@ -11,19 +11,37 @@
 
     </head>
     <body>
-        <h1>スポコチ</h1>
-        <h2 class="my_page">My Page</h2>
-        <div class="table">
-            <div class="table-list">
-                name:  <span>{{$auth->name}}</span><br>
-                email:  <span>{{$auth->email}}</span><br>
-                sport:  <span>{{$auth->sport}}</span><br>
-                profile  <span>{{$auth->profile}}</span><br>
-            </div>
+        <div class="container">
+            <h1>スポコチ</h1>
+            <h2 class="show_page">User 一覧</h2>
+            <div class="container">
+          <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th></th>
+            <th>ID</th>
+            <th>スポーツ</th>
+            <th>名前</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>{{ $authUser->id }}</td>
+              <td>{{ $authUser->sport }}</td>
+              <td>{{ $authUser->name }}</td>
+              <td>
+              
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>  
+                <div class="footer">
+                    <a href="/posts">戻る</a>
+                </div>
+            </body>
         </div>
-        <div class="footer">
-            <a href="/posts">戻る</a>
-        </div>
-    </body>
 </html>
 @endsection

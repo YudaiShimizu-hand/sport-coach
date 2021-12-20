@@ -11,19 +11,21 @@
 
     </head>
     <body>
-        <h1>スポコチ</h1>
-        [<a href="/posts/create">新規募集</a>]
-        {{Auth::user()->name}}
-        @foreach ($posts as $post)
-        <h2 class="title">
-            <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
-        </h2>
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit">delete</button> 
-        </form>
-        @endforeach 
+        <div class="container">
+            <h1>スポコチ</h1>
+            [<a href="/posts/create">新規募集</a>]
+            {{Auth::user()->name}}
+            @foreach ($posts as $post)
+            <h2 class="title">
+                <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
+            </h2>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit">delete</button> 
+            </form>
+            @endforeach 
+        </div>
     </body>
 </html>
 @endsection
