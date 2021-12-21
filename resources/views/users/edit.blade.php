@@ -50,7 +50,7 @@
                     </div>
                     <div class="profile-form mt-3">
                         <div class="labelTitle">profile</div>
-                        <textarea name="profile" placeholder="プロフィール詳細" value="{{$authUser->profile}}"/></textarea>
+                        <textarea name="profile" placeholder="プロフィール詳細"/>{{ $authUser->profile }}</textarea>
                     </div>
                     <input type="submit" name="send" value="ユーザー変更" class="btn btn-primary btn-sm btn-done">
                 </form>

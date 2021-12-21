@@ -31,6 +31,10 @@ class UserController extends Controller
         $authUser = Auth::user();
         $authUser->fill($request->all());
         $authUser->save();
-        return redirect('/users');
+        return redirect('/users/edit');
+    }
+    public function show(User $user)
+    {
+        return view('users.show', ['user' => $user]);
     }
 }
