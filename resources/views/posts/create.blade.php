@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -25,5 +27,9 @@
             </div>
             <input type="submit" value="保存"/>
         </form>
+        <div class="footer">
+            <a href="/posts">戻る</a>
+        </div>
     </body>
 </html>
+@endsection
