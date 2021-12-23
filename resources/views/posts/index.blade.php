@@ -11,19 +11,34 @@
 
     </head>
     <body>
-        <h1>スポコチ</h1>
-        [<a href="/posts/create">新規募集</a>]
-        {{Auth::user()->name}}
-        @foreach ($posts as $post)
-        <h2 class="title">
-            <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
-        </h2>
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit">delete</button> 
-        </form>
-        @endforeach 
+        <div class="container">
+            <h1>スポコチ</h1>
+            [<a href="/posts/create">新規募集</a>]
+            @foreach ($posts as $post)
+            <table class="table table-striped table-hover mt-5">
+                <tr>
+                    <th>User</th>
+                    <th>Title</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>
+                    </td>
+                    <td>
+                        <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
+                    </td>
+                    <td>
+                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">delete</button> 
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            @endforeach 
+        </div>
     </body>
 </html>
 @endsection

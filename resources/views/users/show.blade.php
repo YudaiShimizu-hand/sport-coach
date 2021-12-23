@@ -13,15 +13,18 @@
     <body>
         <div class="container">
             <h1>スポコチ</h1>
-            <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-                @csrf
-                @method('DELETE')
-                <button type="submit">delete</button>
-            </form>
-            <p>{{$post->user->name}}</p>
-            <h2 class="title">{{ $post->name }}</h2>
-            <p class="body">{{ $post->body }}</p>
+            <div class="title-name mt-5">
+                <h3>name</h3>
+                <p>{{ $user->name }}</p>
+            </div>
+            <div class="title-sport">
+                <h3>Sport</h3>
+                <p>{{ $user->sport }}</p>
+            </div>
+            <div class="title-profile">
+                <h3>Profile</h3>
+                <p>{{ $user->profile }}</p>
+            </div>
             <div class="footer">
                 <a href="/posts">戻る</a>
             </div>
