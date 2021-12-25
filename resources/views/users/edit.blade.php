@@ -16,6 +16,9 @@
         <h2 class="show_page">User 情報変更</h2>
             <div class="row mt-5">
                 <div class="col-sm-4">
+                    <div class="title-image">
+                        <img src="{{ $authUser->image_path }}">
+                    </div>
                     <div class="title-name">
                         <h3>name</h3>
                         <p>{{ $authUser->name }}</p>
@@ -36,6 +39,10 @@
                 <div class="col-sm-4">
                 <form method="post" action="/users/" enctype="multipart/form-data">
                     @csrf
+                    <div class="name-form mt-3">
+                        <div class="image">Image</div>
+                         <input type="file" name="image">
+                    </div>
                     <div class="name-form mt-3">
                         <div class="labelTitle">Name</div>
                         <input type="text" class="userForm" name="name" placeholder="User" value="{{ $authUser->name }}">
