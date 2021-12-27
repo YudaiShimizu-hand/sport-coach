@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="container">
-            <h1>スポコチ</h1>
             <div class="title-name mt-5">
                 <h3>name</h3>
                 <p>{{ $user->name }}</p>

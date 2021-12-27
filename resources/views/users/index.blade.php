@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="container">
-            <h1>スポコチ</h1>
             <h2 class="show_page">User 一覧</h2>
             <div class="container">
           <table class="table table-striped table-hover">

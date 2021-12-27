@@ -8,14 +8,21 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
+        <!-- Styles -->
+    <link href="{{ asset('css/no-image.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-        <h1>スポコチ</h1>
         <h2 class="show_page">User 情報変更</h2>
             <div class="row mt-5">
                 <div class="col-sm-4">
+                    @if( isset($authUser->image_path))
+                        <div class="title-image">
+                            <img src="{{ $authUser->image_path }}" width=100 height=100 >
+                        </div>
+                    @else
+                        <div class="no-image">no-image</div>
+                    @endif
                     <div class="title-name">
                         <h3>name</h3>
                         <p>{{ $authUser->name }}</p>
@@ -36,6 +43,10 @@
                 <div class="col-sm-4">
                 <form method="post" action="/users/" enctype="multipart/form-data">
                     @csrf
+                    <div class="name-form mt-3">
+                        <div class="image">Image</div>
+                         <input type="file" name="image">
+                    </div>
                     <div class="name-form mt-3">
                         <div class="labelTitle">Name</div>
                         <input type="text" class="userForm" name="name" placeholder="User" value="{{ $authUser->name }}">

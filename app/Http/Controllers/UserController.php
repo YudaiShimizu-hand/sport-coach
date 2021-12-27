@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -30,6 +31,9 @@ class UserController extends Controller
     {
         $authUser = Auth::user();
         $authUser->fill($request->all());
+        $image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+        $authUser->image_path = Storage::disk('s3')->url($path);
         $authUser->save();
         return redirect('/users/edit');
     }
