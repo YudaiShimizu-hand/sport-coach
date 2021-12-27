@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="container">
-            <h1>スポコチ</h1>
             <h2>新規募集</h2>
             <form action="/posts" method="POST">
                 @csrf

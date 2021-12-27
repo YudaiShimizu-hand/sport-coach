@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="container">
-            <h1>スポコチ</h1>
             [<a href="/posts/create">新規募集</a>]
             @foreach ($posts as $post)
             <table class="table table-striped table-hover mt-5">
