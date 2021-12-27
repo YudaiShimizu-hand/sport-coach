@@ -10,10 +10,15 @@ class Post extends Model
     'name',
     'body',
     'user_id',
+    'category_id',
 ];
 
 public function user()
 {
     return $this->belongsTo('App\User');
+}
+public function category()
+{
+    return $this->belongsTo('App\Category');
 }
 }

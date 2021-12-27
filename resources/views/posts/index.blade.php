@@ -18,6 +18,7 @@
             <table class="table table-striped table-hover mt-5">
                 <tr>
                     <th>User</th>
+                    <th>SportCategory</th>
                     <th>Title</th>
                     <th></th>
                 </tr>
@@ -35,6 +36,9 @@
                             </a>
                         @endif
                     </td>
+                        <td>
+                            <p>{{ $post->category->name }}</p>
+                        </td>
                     <td>
                         <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
                     </td>
