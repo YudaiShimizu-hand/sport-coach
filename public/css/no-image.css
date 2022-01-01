@@ -9,3 +9,9 @@
     padding:15px; border:1px solid black;
     background-color:lightgray;
 }
+
+.no-image-show {
+    width:100px; height:100px;
+    padding:15px; border:1px solid black;
+    background-color:lightgray;
+}

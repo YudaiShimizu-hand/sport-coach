@@ -15,13 +15,21 @@
             <h2>新規募集</h2>
             <form action="/posts" method="POST">
                 @csrf
-                <div class="name">
-                    <h2>タイトル</h2>
+                <div class="category mt-3">
+                    <h3>スポーツカテゴリー</h3>
+                    <select name="post[category_id]">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="name mt-3">
+                    <h3>タイトル</h3>
                     <input type="text" name="post[name]" placeholder="タイトル"/>
                     <p class="title__error" style="color:red">{{ $errors->first('post.name') }}</p>
                 </div>
                 <div class="body">
-                    <h2>募集詳細</h2>
+                    <h3>募集詳細</h3>
                     <textarea name="post[body]" placeholder="詳細"/></textarea>
                     <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>

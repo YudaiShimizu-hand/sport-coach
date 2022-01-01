@@ -8,11 +8,19 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
+    <!-- Styles -->
+    <link href="{{ asset('css/no-image.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <div class="title-name mt-5">
+            <div class="title-image mt-5">
+                @if(isset($user->image_path))
+                        <img src="{{ $user->image_path }}" width=100 height=100 >
+                @else
+                        <div class="no-image-show"></div>
+                @endif
+            </div>
+            <div class="title-name mt-3">
                 <h3>name</h3>
                 <p>{{ $user->name }}</p>
             </div>
