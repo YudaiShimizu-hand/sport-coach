@@ -36,9 +36,12 @@
                             </a>
                         @endif
                     </td>
-                        <td>
-                            <p>{{ $post->category->name }}</p>
-                        </td>
+                    <td>
+                        <p>{{ $post->coach }}</p>    
+                    </td>
+                    <td>
+                        <p>{{ $post->category->name }}</p>
+                    </td>
                     <td>
                         <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
                     </td>

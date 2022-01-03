@@ -25,6 +25,7 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $input += ['user_id' => $request->user()->id];
+        $input += ['coach' => $request['student']];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
