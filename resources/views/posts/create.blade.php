@@ -16,8 +16,8 @@
             <form action="/posts" method="POST">
                 @csrf
                 <div id="coach">
-                    <input name="student" type="radio" value="coach"> コーチ
-    	            <input name="student" type="radio" value="student"> 生徒
+                    <input name="coached" type="radio" value="Coach"> コーチ
+    	            <input name="coached" type="radio" value="Student"> 生徒
 	            </div>
                 <div class="category mt-3">
                     <h3>スポーツカテゴリー</h3>
