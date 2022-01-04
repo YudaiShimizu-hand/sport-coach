@@ -15,6 +15,10 @@
             <h2>新規募集</h2>
             <form action="/posts" method="POST">
                 @csrf
+                <div id="coach">
+                    <input name="coached" type="radio" value="Coach"> コーチ
+    	            <input name="coached" type="radio" value="Student"> 生徒
+	            </div>
                 <div class="category mt-3">
                     <h3>スポーツカテゴリー</h3>
                     <select name="post[category_id]">
@@ -22,6 +26,7 @@
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
+                    
                 </div>
                 <div class="name mt-3">
                     <h3>タイトル</h3>
