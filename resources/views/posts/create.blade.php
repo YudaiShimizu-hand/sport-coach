@@ -18,6 +18,7 @@
                 <div id="coach">
                     <input name="coached" type="radio" value="Coach"> コーチ
     	            <input name="coached" type="radio" value="Student"> 生徒
+	            <p class="coach__error" style="color:red">{{ $errors->first('post.coach') }}</p>
 	            </div>
                 <div class="category mt-3">
                     <h3>スポーツカテゴリー</h3>
