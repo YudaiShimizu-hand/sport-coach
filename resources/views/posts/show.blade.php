@@ -14,6 +14,7 @@
     <body>
         <div class="container">
             <div class="posts-show">
+                @if(Auth::user()->id == $post->user_id)
                 <div class="posts-show-botton">
                     <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
@@ -22,6 +23,7 @@
                         <button type="submit">delete</button>
                     </form>
                 </div>
+                @endif
                 <div class="posts-show-body mt-5">
                     @if(isset($post->user->image_path))
                         <a href="/users/{{ $post->user->id }}">
