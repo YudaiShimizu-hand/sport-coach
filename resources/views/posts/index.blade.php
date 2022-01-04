@@ -57,7 +57,10 @@
                     </td>
                 </tr>
             </table>
-            @endforeach 
+            @endforeach
+            <div class='paginate'>
+                {{ $posts->links() }}
+            </div>
         </div>
     </body>
 </html>
