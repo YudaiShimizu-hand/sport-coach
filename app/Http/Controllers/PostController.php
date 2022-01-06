@@ -24,8 +24,9 @@ class PostController extends Controller
     public function store(PostRequest $request, Post $post)
     {
         $input = $request['post'];
-        $input += ['user_id' => $request->user()->id];
-        $input += ['coach' => $request['coached']];
+        $input += ['user_id' => $request->user()->id, 'coach' => $request['coached']];
+        //$input += ['coach' => $request['coached']];
+        dd($input);
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }

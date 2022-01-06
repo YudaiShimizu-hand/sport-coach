@@ -2,49 +2,52 @@
 
 @section('content')
 
-<div class="chat-container row justify-content-center">
-    <div class="chat-area">
-        <div class="card">
-            <div class="card-header">
-                @foreach ($comments as $comment)
-                    @include('components.comment', ['comment' => $comment])
-                @endforeach
-            </div>
-            <div class="card-body chat-card">
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-                @include('components.comment')
-            </div>
-        </div>
-    </div>
-    </div>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <title>スポコチ</title>
 
-    <div class="comment-container row justify-content-center">
-    <div class="input-group comment-area">
-       <form method="POST" action="{{route('add')}}">
-            @csrf
-            <div class="comment-container row justify-content-center">
-                <div class="input-group comment-area">
-                    <textarea class="form-control" id="comment" name="comment" placeholder="push massage (shift + Enter)"
-                        aria-label="With textarea"
-                        onkeydown="if(event.shiftKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
-                    <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">Submit</button>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="chat-container row justify-content-center">
+            <div class="chat-area">
+                <div class="card">
+                    <div class="card-header">
+                        @foreach ($comments as $comment)
+                            @include('components.comment', ['comment' => $comment])
+                        @endforeach
+                    </div>
+                    <div class="card-body chat-card">
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                        @include('components.comment')
+                    </div>
                 </div>
             </div>
-        </form>
         </div>
-</div>
+        <!--<div class="comment-container row justify-content-center">-->
+        <!--    <div class="input-group comment-area">-->
+        <!--        <textarea class="form-control" placeholder="input massage" aria-label="With textarea"></textarea>-->
+        <!--        <button type="input-group-prepend button" class="btn btn-outline-primary comment-btn">Submit</button>-->
+        <!--    </div>-->
+        <!--</div>-->
+    </body>
+</html>
 @endsection
