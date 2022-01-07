@@ -38,7 +38,7 @@
                         @endif
                     </td>
                     <td>
-                        <p>{{ $post->user->coach }}</p>    
+                        <p>{{ $post->coach }}</p>    
                     </td>
                     <td>
                         <p>{{ $post->category->name }}</p>
