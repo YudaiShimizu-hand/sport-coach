@@ -18,6 +18,7 @@
             <table class="table table-striped table-hover mt-5">
                 <tr>
                     <th>User</th>
+                    <th>Coach or Student</th>
                     <th>SportCategory</th>
                     <th>Title</th>
                     <th></th>
@@ -46,15 +47,20 @@
                         <a href="/posts/{{ $post->id }}">{{ $post->name }}</a>
                     </td>
                     <td>
+                        @if(Auth::user()->id == $post->user_id)
                         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                             @csrf
-                            @method('DELETE')
-                            <button type="submit">delete</button> 
+                                <button type="submit">delete</button>
+                                @method('DELETE')
                         </form>
+                        @endif
                     </td>
                 </tr>
             </table>
-            @endforeach 
+            @endforeach
+            <div class='paginate'>
+                {{ $posts->links() }}
+            </div>
         </div>
     </body>
 </html>

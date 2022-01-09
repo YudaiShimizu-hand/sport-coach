@@ -26,6 +26,7 @@ class PostRequest extends FormRequest
         return [
             'post.name' => 'required|string|max:100',
             'post.body' => 'required|string|max:4000',
+            'post.coach' => 'required',
         ];
     }
 }
