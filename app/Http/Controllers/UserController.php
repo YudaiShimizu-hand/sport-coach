@@ -29,6 +29,7 @@ class UserController extends Controller
     }
     public function update(Request $request)
     {
+        $authUser = Auth::user();
         $authUser->fill($request->all());
         $image = $request->file('image');
         $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
