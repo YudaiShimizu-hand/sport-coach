@@ -15,6 +15,8 @@
         <div class="container">
             <div class="row">
             <div class="col-md-4">
+                <a class="btn btn-outline-primary" href="/posts/create">新規募集ページ</a></br>
+                <a class="btn btn-primary mt-3" href="/posts">投稿一覧ページ</a>
                 <div class="text-center my-4">
                     <h3 class="brown border p-2">ユーザ検索</h3>
                 </div>
@@ -32,6 +34,7 @@
                               <option value="Handball">Handball</option>
                               <option value="Soccer">Soccer</option>
                          </select>
+                         <p class="text-danger">必ず選択してください</p>
                     </div>
                     <div class="form-group">
                         <h3>Coach or Student</h3>
@@ -39,6 +42,7 @@
                               <option value="Coach">Coach</option>
                               <option value="Student">Student</option>
                          </select>
+                         <p class="text-danger">必ず選択してください</p>
                     </div>
                     <input type="submit" value="検索" class="btn btn-primary btn-block"/>
                 </form>
