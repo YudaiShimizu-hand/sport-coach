@@ -13,7 +13,8 @@
     </head>
     <body>
         <div class="container">
-            [<a href="/posts/create">新規募集</a>]
+            <a class="btn btn-outline-primary" href="/posts/create">新規募集ページ</a></br>
+            <a class="btn btn-primary mt-3" href="/search">検索ページ</a>
             @foreach ($posts as $post)
             <table class="table table-striped table-hover mt-5">
                 <tr>
@@ -38,7 +39,7 @@
                         @endif
                     </td>
                     <td>
-                        <p>{{ $post->coach }}</p>    
+                        <p>{{ $post->user->coach }}</p>    
                     </td>
                     <td>
                         <p>{{ $post->category->name }}</p>
