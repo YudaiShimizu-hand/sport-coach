@@ -33,3 +33,6 @@ Route::post('/add', 'HomeController@add')->name('add');
 
 Route::get('/search','SearchController@index');
 Route::post('/search', 'SearchController@search')->name('search');
+
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
