@@ -36,7 +36,11 @@
                             <h3>{{ $post->user->name }}</h3>
                         </a>
                     @endif
-                    <p>{{ $post->coach }}</p>
+                    @if($post['coach'] == "Coach")
+                        <p class="btn btn-outline-danger">{{ $post->coach }}</p> 
+                    @else
+                        <p class="btn btn-outline-info">{{ $post->coach }}</p> 
+                    @endif
                     <p class="show-category mt-5">{{ $post->category->name }}</p>
                     <h2 class="title mt-3">{{ $post->name }}</h2>
                     <h4 class="body mt-3">{{ $post->body }}</h4>

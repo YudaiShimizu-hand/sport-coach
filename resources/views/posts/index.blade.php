@@ -39,7 +39,11 @@
                         @endif
                     </td>
                     <td>
-                        <p>{{ $post->user->coach }}</p>    
+                        @if($post['coach'] == "Coach")
+                            <p class="btn btn-outline-danger">{{ $post->coach }}</p> 
+                        @else
+                            <p class="btn btn-outline-info">{{ $post->coach }}</p> 
+                        @endif
                     </td>
                     <td>
                         <p>{{ $post->category->name }}</p>

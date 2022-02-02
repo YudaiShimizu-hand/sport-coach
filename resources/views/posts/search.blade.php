@@ -32,7 +32,16 @@
                               <option value="Basketball">Basketball</option>
                               <option value="Valleyball">Valleyball</option>
                               <option value="Handball">Handball</option>
+                              <option value="Baseball">Baseball</option>
+                              <option value="Tennis">Tennis</option>
+                              <option value="TableTennis">TableTennis</option>
                               <option value="Soccer">Soccer</option>
+                              <option value="Rugby">Rugby</option>
+                              <option value="Golf">Golf</option>
+                              <option value="Swiming">Swiming</option>
+                              <option value="Suki">Suki</option>
+                              <option value="TrackAndField">TrackAndField</option>
+                              <option value="Gymnastics">Gymnastics</option>
                          </select>
                          <p class="text-danger">必ず選択してください</p>
                     </div>
