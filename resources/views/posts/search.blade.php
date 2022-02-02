@@ -86,7 +86,11 @@
                                     @endif
                                 </td>  
                                 <td>
-                                    {{ $data->coach }} 
+                                    @if($data['coach'] == "Coach")
+                                        <p class="btn btn-outline-danger">{{ $data->coach }}</p> 
+                                    @else
+                                        <p class="btn btn-outline-info">{{ $data->coach }}</p> 
+                                    @endif
                                 </td>
                                 <td>
                                    {{ $data->category->name }}
