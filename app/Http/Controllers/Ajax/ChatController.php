@@ -15,5 +15,6 @@ class ChatController extends Controller
         \App\Message::create([
             'body' => $request->message
         ]);
+        event(new MessageCreated($message));
     }
 }
