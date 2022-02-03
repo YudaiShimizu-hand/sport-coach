@@ -11,9 +11,9 @@
         </div>
     </div>
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/app.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>-->
+    <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
     
     <script>
         new Vue({
@@ -37,15 +37,16 @@
                 
                 getMessages() {
                     const url = '/ajax/chat';
+                    console.log("a");
                     axios.get(url)
                         .then((response) => {
-            
+                        console.log("a");
                             this.messages = response.data;
                         });
-                },
-                mounted() {
-                    this.getMessages();
-                },
+                }
+            },
+            mounted(){
+                this.getMessages();
             }
         });
     </script>
