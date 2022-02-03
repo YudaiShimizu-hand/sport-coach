@@ -37,15 +37,16 @@
                 
                 getMessages() {
                     const url = '/ajax/chat';
+                    console.log("a");
                     axios.get(url)
                         .then((response) => {
-            
+                        console.log("a");
                             this.messages = response.data;
                         });
-                },
-                mounted() {
-                    this.getMessages();
-                },
+                }
+            },
+            mounted(){
+                this.getMessages();
             }
         });
     </script>
