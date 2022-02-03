@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "name": "laravel/laravel",
     "type": "project",
@@ -12,9 +11,10 @@
         "php": "^7.2.5|~8.0.0",
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20.26",
+        "laravel/socialite": "^5.2.6",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "laravel/socialite":"^5.2.6"
+        "pusher/pusher-php-server": "^7.0"
     },
     "require-dev": {
         "facade/ignition": "^1.16.15",
@@ -63,5 +63,3 @@
         ]
     }
 }
-=======
->>>>>>> 1c1cc03e4fa38b34b95dd5536c3912b967ee94e2
