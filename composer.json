@@ -8,13 +8,21 @@
     ],
     "license": "MIT",
     "require": {
+<<<<<<< HEAD
         "php": "^7.2.5|~8.0.0",
+=======
+        "php": "^7.2.5|^8.0",
+>>>>>>> 6d2b646970bc8a4d2f5ab5f9baff4417e7b03bb3
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20.26",
         "laravel/socialite": "^5.2.6",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
+<<<<<<< HEAD
         "pusher/pusher-php-server": "^7.0"
+=======
+        "pusher/pusher-php-server": "~4.0"
+>>>>>>> 6d2b646970bc8a4d2f5ab5f9baff4417e7b03bb3
     },
     "require-dev": {
         "facade/ignition": "^1.16.15",
