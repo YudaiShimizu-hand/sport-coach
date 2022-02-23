@@ -59,7 +59,7 @@
                                     <a class="dropdown-item" href="/users/edit">
                                         {{ __(' プロフィール編集') }}
                                     </a>
-                                    <a class="dropdown-item" href="/posts">
+                                    <a class="dropdown-item" href="/">
                                         {{ __('トップ') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
