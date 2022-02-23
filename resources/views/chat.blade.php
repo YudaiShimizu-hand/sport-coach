@@ -10,6 +10,9 @@
             <span v-text="m.body" v-bind:style="{ 'color': m.recieve != partner ? 'blue': 'red'}"></span>
             <!--<span v-text="m.body"></span>-->
         </div>
+        <div class="footer">
+            <a href="/home">戻る</a>
+        </div>
     </div>
     <script src="/js/app.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>-->
