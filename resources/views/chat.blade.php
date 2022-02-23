@@ -5,17 +5,18 @@
         <br>
         <button type="button" @click="send()">送信</button>
         
+        <!--<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>-->
         <div v-for="m in messages">
-            <span v-text="m.created_at"></span>：&nbsp;
-            <span v-text="m.body"></span>
+            <span v-text="m.body" v-bind:style="{ 'color': m.recieve != partner ? 'blue': 'red'}"></span>
+            <!--<span v-text="m.body"></span>-->
         </div>
     </div>
-    
     <script src="/js/app.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>-->
     <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
     
     <script>
+    var partner = {{$partner}}
         new Vue({
             beforeSend: function (xhr) {
             return xhr.setRequestHeader('X-CSRF-TOKEN', "{{csrf_token()}}");
@@ -27,7 +28,7 @@
                 },
             methods: {
                 send() {
-                    const url = '/ajax/chat';
+                    const url = '/ajax/chat/' + partner;
                     const params = { message: this.message };
                     axios.post(url, params)
                         .then((response) => {
@@ -36,7 +37,7 @@
                 },
                 
                 getMessages() {
-                    const url = '/ajax/chat';
+                    const url = '/ajax/chat/' + partner;
                     console.log("a");
                     axios.get(url)
                         .then((response) => {
