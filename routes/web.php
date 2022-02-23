@@ -29,9 +29,6 @@ Route::group(['middleware' => 'auth'], function() {
     // Route::post('/chat/send/{partner}' , 'ChatController@store');
     Route::get('ajax/chat/{partner}', 'Ajax\ChatController@index'); // メッセージ一覧を取得
     Route::post('ajax/chat/{partner}', 'Ajax\ChatController@create'); // チャット登録
-    
-    Auth::routes();
-        Route::get('/home', 'HomeController@index')->name('home');
         
     Route::get('/search','SearchController@index');
     Route::post('/search', 'SearchController@search')->name('search');
@@ -43,6 +40,9 @@ Route::group(['middleware' => 'auth'], function() {
 
 // Route::get('/search','SearchController@index');
 // Route::post('/search', 'SearchController@search')->name('search');
+
+Auth::routes();
+        Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
