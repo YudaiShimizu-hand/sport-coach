@@ -16,7 +16,7 @@
             <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-outline-primary" href="/posts/create">新規募集ページ</a></br>
-                <a class="btn btn-primary mt-3" href="/">投稿一覧ページ</a>
+                <a class="btn btn-primary mt-3" href="/posts">投稿一覧ページ</a>
                 <div class="text-center my-4">
                     <h3 class="brown border p-2">ユーザ検索</h3>
                 </div>
