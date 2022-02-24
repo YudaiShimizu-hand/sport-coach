@@ -32,8 +32,9 @@
                 <h3>Profile</h3>
                 <p>{{ $user->profile }}</p>
             </div>
+            <td><a href="/chat/{{$user->id}}"><button type="button" class="btn btn-primary">Chat</button></a></td>
             <div class="footer">
-                <a href="/posts">戻る</a>
+                <a href="/">戻る</a>
             </div>
         </div>
     </body>

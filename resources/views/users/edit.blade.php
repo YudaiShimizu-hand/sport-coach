@@ -41,8 +41,9 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                <form method="post" action="/users/" enctype="multipart/form-data">
+                <form method="post" action="/users/update" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="name-form mt-3">
                         <div class="image">Image</div>
                          <input type="file" name="image">

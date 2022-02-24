@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -25,18 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $comments = Comment::get();
-        return view('home', ['comments' => $comments]);
-    }
-    public function add(Request $request)
-    {
-        $user = Auth::user();
-        $comment = $request->input('comment');
-        Comment::create([
-            'login_id' => $user->id,
-            'name' => $user->name,
-            'comment' => $comment
-        ]);
-        return redirect()->route('home');
+       $user = Auth::user();
+ 
+        // ログイン者以外のユーザを取得する
+        $users = User::where('id' ,'<>' , $user->id)->get();
+        // チャットユーザ選択画面を表示
+        return view('chat_user_select' , compact('users'));
     }
 }

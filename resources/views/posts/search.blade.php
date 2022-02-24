@@ -16,7 +16,7 @@
             <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-outline-primary" href="/posts/create">新規募集ページ</a></br>
-                <a class="btn btn-primary mt-3" href="/posts">投稿一覧ページ</a>
+                <a class="btn btn-primary mt-3" href="/">投稿一覧ページ</a>
                 <div class="text-center my-4">
                     <h3 class="brown border p-2">ユーザ検索</h3>
                 </div>
@@ -32,7 +32,16 @@
                               <option value="Basketball">Basketball</option>
                               <option value="Valleyball">Valleyball</option>
                               <option value="Handball">Handball</option>
+                              <option value="Baseball">Baseball</option>
+                              <option value="Tennis">Tennis</option>
+                              <option value="TableTennis">TableTennis</option>
                               <option value="Soccer">Soccer</option>
+                              <option value="Rugby">Rugby</option>
+                              <option value="Golf">Golf</option>
+                              <option value="Swiming">Swiming</option>
+                              <option value="Suki">Suki</option>
+                              <option value="TrackAndField">TrackAndField</option>
+                              <option value="Gymnastics">Gymnastics</option>
                          </select>
                          <p class="text-danger">必ず選択してください</p>
                     </div>
@@ -77,7 +86,11 @@
                                     @endif
                                 </td>  
                                 <td>
-                                    {{ $data->coach }} 
+                                    @if($data['coach'] == "Coach")
+                                        <p class="btn btn-outline-danger">{{ $data->coach }}</p> 
+                                    @else
+                                        <p class="btn btn-outline-info">{{ $data->coach }}</p> 
+                                    @endif
                                 </td>
                                 <td>
                                    {{ $data->category->name }}

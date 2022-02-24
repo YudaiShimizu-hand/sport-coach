@@ -11,12 +11,12 @@
 |
 */
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/users', 'UserController@index');
+    // Route::get('/users', 'UserController@index');
     Route::get('/users/edit', 'UserController@edit');
-    Route::post('/users/', 'UserController@update');
+    Route::put('/users/update', 'UserController@update');
     Route::get('/users/{user}', 'UserController@show');
 
-    Route::get('/posts', 'PostController@index');
+    Route::get('/', 'PostController@index');
     Route::get('/posts/create', 'PostController@create');
     Route::get('/posts/{post}/edit', 'PostController@edit');
     Route::put('/posts/{post}', 'PostController@update');
@@ -25,14 +25,25 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('/posts/', 'PostController@store');
     
+    Route::get('chat/{partner}', 'ChatController@index');
+    // Route::post('/chat/send/{partner}' , 'ChatController@store');
+    Route::get('ajax/chat/{partner}', 'Ajax\ChatController@index'); // メッセージ一覧を取得
+    Route::post('ajax/chat/{partner}', 'Ajax\ChatController@create'); // チャット登録
+    
+    Auth::routes();
+        Route::get('/home', 'HomeController@index')->name('home');
+        
+    Route::get('/search','SearchController@index');
+    Route::post('/search', 'SearchController@search')->name('search');
 });
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/add', 'HomeController@add')->name('add');
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::post('/add', 'HomeController@add')->name('add');
 
-Route::get('/search','SearchController@index');
-Route::post('/search', 'SearchController@search')->name('search');
+// Route::get('/search','SearchController@index');
+// Route::post('/search', 'SearchController@search')->name('search');
 
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
