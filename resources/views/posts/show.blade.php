@@ -46,7 +46,7 @@
                     <h4 class="body mt-3">{{ $post->body }}</h4>
                 </div>
                 <div class="footer">
-                    <a href="/">戻る</a>
+                    <a href="/posts">戻る</a>
                 </div>
             </div>
         </div>

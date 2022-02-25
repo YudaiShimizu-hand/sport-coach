@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -32,5 +32,10 @@ class HomeController extends Controller
         $users = User::where('id' ,'<>' , $user->id)->get();
         // チャットユーザ選択画面を表示
         return view('chat_user_select' , compact('users'));
+    }
+    
+    public function top()
+    {
+        return view('toppage/top');
     }
 }
